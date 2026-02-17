@@ -1,0 +1,15 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.cache
+*.log
+
+# Build
+bin/
+obj/
+
+# Others
+*.pdb
+*.exe
+*.dll

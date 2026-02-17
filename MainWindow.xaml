@@ -1,0 +1,41 @@
+﻿<Window x:Class="PyLiMan.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PyLiMan" Height="500" Width="450"
+        Background="{DynamicResource WindowBackgroundColor}">
+	<Grid Margin="10">
+		<StackPanel>
+
+			<!-- Выбор темы -->
+			<StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+				<TextBlock Text="Тема:" VerticalAlignment="Center" Margin="0,0,5,0" 
+                           Foreground="{DynamicResource TextColor}"/>
+				<ComboBox x:Name="ThemeSelector" Width="120" SelectionChanged="ThemeSelector_SelectionChanged">
+					<ComboBoxItem Content="Светлая"/>
+					<ComboBoxItem Content="Тёмная"/>
+				</ComboBox>
+			</StackPanel>
+
+			<!-- Ввод библиотеки -->
+			<TextBox x:Name="InstallBox" Margin="0,0,0,5"/>
+
+			<!-- Кнопки действий -->
+			<StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+				<Button Content="Установить" Click="Install_Click" Width="100" Margin="0,0,5,0"/>
+				<Button Content="Удалить" Click="Uninstall_Click" Width="100" Margin="0,0,5,0"/>
+				<Button Content="Обновить" Click="Update_Click" Width="100"/>
+			</StackPanel>
+
+			<!-- Прогресс -->
+			<ProgressBar x:Name="InstallProgress" Height="20" Minimum="0" Maximum="100"/>
+			<TextBlock x:Name="InstallPercent" Text="0%" HorizontalAlignment="Center" Margin="0,5,0,0"
+                       Foreground="{DynamicResource TextColor}"/>
+
+			<!-- Список установленных библиотек -->
+			<TextBlock Text="Установленные библиотеки:" Margin="0,10,0,5"
+                       Foreground="{DynamicResource TextColor}"/>
+			<ListBox x:Name="InstalledList" Height="300" SelectionChanged="InstalledList_SelectionChanged"
+                     Foreground="{DynamicResource TextColor}" Background="{DynamicResource WindowBackgroundColor}"/>
+		</StackPanel>
+	</Grid>
+</Window>
